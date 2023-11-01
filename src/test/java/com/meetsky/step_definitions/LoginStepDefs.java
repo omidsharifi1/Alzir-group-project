@@ -15,11 +15,6 @@ public class LoginStepDefs {
 
     }
 
-    @Then("User clicks on menu option")
-    public void userClicksOnMenuOption() {
-
-        loginPage.clickMenuByText("Files");
-    }
 
 
     @Given("the user logged in with username and password")
