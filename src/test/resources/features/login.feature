@@ -6,7 +6,7 @@ Feature: Users should be able to login
 @wip
 Scenario: Verify login with different user types
   Given the user logged in with username and password
-  Then User clicks on menu option
+ 
 
 
 
