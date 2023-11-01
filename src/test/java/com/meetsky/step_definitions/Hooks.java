@@ -1,8 +1,5 @@
 package com.meetsky.step_definitions;
 
-
-
-
 import com.meetsky.utilities.BrowserUtils;
 import com.meetsky.utilities.ConfigurationReader;
 import com.meetsky.utilities.Driver;
@@ -21,13 +18,13 @@ for ALL the SCENARIOS and even STEPS.
 public class Hooks {
 
     //import the @Before coming from io.cucumber.java
-//    @Before (order = 1)
-//    public void setupMethod(){
-//
-//        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-//
-//        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-//    }
+    @Before (order = 1)
+    public void setupMethod(){
+
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+    }
 
     //@Before (value = "@login", order = 2 )
     public void login_scenario_before(){
