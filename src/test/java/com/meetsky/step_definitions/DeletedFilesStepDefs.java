@@ -200,7 +200,7 @@ loginPage.clickMenuByText("Files");
         for (WebElement each : DeletedFilesAndFolders) {
             FilesNames.add(each.getAttribute("title"));
         }
-        Assert.assertTrue(!(FilesNames.get(1).equalsIgnoreCase(FileName)));
+        Assert.assertTrue(!(FilesNames.get(0).equalsIgnoreCase(FileName)));   
         System.out.println(FilesNames);
 
     }
