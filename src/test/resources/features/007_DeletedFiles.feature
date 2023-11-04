@@ -1,3 +1,4 @@
+@wip
 Feature: Manage Deleted Files
   User Story :
 
@@ -11,23 +12,25 @@ Feature: Manage Deleted Files
 
   Background:
     Given the user logged in with username and password
-    And user inside File page
+    Given  user inside File page
     Then user go to Deleted Files page
+
+
 #    And there are deleted files in the system
 
-  Scenario: Order Deleted Files by Newest to Oldest
+  Scenario: Order Deleted Files by Newest to Oldest or Vice Versa
+    Given there is a deleted file on the top of the list
     When the user selects the option to order files by newest to oldest
     Then the deleted files should be displayed in descending order of deletion timestamp
+    When the user selects the option to order files by oldest to newest
+    Then the deleted files should be displayed in ascending order of deletion timestamp
 
-#  Scenario: Order Deleted Files by Oldest to Newest
-#    When the user selects the option to order files by oldest to newest
-#    Then the deleted files should be displayed in ascending order of deletion timestamp
-#
-#  Scenario: Permanently Delete a File
-#    Given there is a deleted file named "important_report.txt"
-#    When the user clicks on the three dots icon next to that file
-#    And selects the "Permanently Delete" option
-#    Then that file should be removed permanently from the system
+  Scenario: Permanently Delete a File
+    Given there is a deleted file on the top of the list
+    When the user clicks on the three dots icon next to that file
+    And selects the Permanently Delete option and click it
+  And verify file name "Ali" is permanently deleted
+
 #
 #  Scenario: Restore a Deleted File
 #    Given there is a deleted file named "family_photo.jpg"
