@@ -19,53 +19,28 @@ public class DeletedFilesPage extends FilesPage {
     public WebElement GridView;
 
     @FindBy(xpath = "(//span[contains(@class, 'sort-indicator icon-triangle')])[2]")
-    public WebElement ascendingSortIcon;
-
-    @FindBy(xpath = "(//span[contains(@class, 'sort-indicator icon-triangle')])[2]")
-    public WebElement descendingSortIcon;
+    public WebElement SortIcon;
 
 
     @FindAll({@FindBy(xpath = "((//table[@id='filestable'])[11]/tbody/tr/td[@class='date']/span[@data-timestamp])")})
     public List<WebElement> TimeElement;
 
+    @FindBy(xpath = "(//a[@class='action action-menu permanent'])[1]") // this is the location of the first file in the list
+    public WebElement threeDots;
+
+    @FindBy(linkText = "Delete permanently")
+    public WebElement deletePermantly;
+
+    @FindAll({@FindBy(xpath = "(//table[@id='filestable'])[11]/tbody/tr/td[@class='filename']//span[@class='nametext extra-data'] ")})
+    public List<WebElement> Files;
+
 }
 
-//    @FindBy(xpath = "((//table[@id='filestable'])[11]/tbody/tr/td[@class='date']/span[@data-timestamp])[2]")
-//    public WebElement NdateElement;
-//    private WebDriver driver; // Initialize your WebDriver instance
-
-
-
-    // Method to click on the sort icon based on provided XPath patterns
 
 
 
 
 
 
-//  try {
-//            // Locate the sort icon for ascending order
-//
-//            // Click the ascending sort icon
-//            ascendingSortIcon.click();
-//
-//            // Wait for sorting action (if needed)
-//            // Add additional logic here if required
-//
-//            // Verify sorting order (if needed)
-//            // Add additional verification logic here if required
-//
-//            // If ascending sort is successful, click the descending sort icon
-//
-//            descendingSortIcon.click();
-//
-//            // Wait for sorting action (if needed)
-//            // Add additional logic here if required
-//
-//            // Verify sorting order (if needed)
-//            // Add additional verification logic here if required
-//
-//        } catch (Exception e) {
-//            System.err.println("Error while clicking the sort icon: " + e.getMessage());
-//        }
-//    }
+
+
