@@ -3,14 +3,17 @@ package com.meetsky.step_definitions;
 import com.meetsky.pages.ContactsPage;
 import com.meetsky.pages.LoginPage;
 import com.meetsky.utilities.BrowserUtils;
-import com.meetsky.utilities.ConfigurationReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class US8_ContactsGroup_StepDefinitions {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class B30G4_08_ContactsGroup_StepDefinitions {
 
     ContactsPage contactsPage = new ContactsPage();
     LoginPage loginPage = new LoginPage();
@@ -34,6 +37,8 @@ public class US8_ContactsGroup_StepDefinitions {
 
         contactsPage.GroupNameInputBox.sendKeys(groupName);
 
+        contactsPage.GroupNameSubmitButton.click();
+
     }
 
     @Then("the group is created successfully with name {string}")
@@ -43,7 +48,8 @@ public class US8_ContactsGroup_StepDefinitions {
 
        String actualGroupName = contactsPage.GroupElement.getText();
 
-       Assert.assertEquals(actualGroupName,groupName);
+
+       Assert.assertEquals(groupName,actualGroupName);
 
     }
 
@@ -51,24 +57,37 @@ public class US8_ContactsGroup_StepDefinitions {
     public void theUserOpensAContactSInfoMenu() {
     }
 
-    @Then("the user can see all available groups in the dropdown menu")
-    public void theUserCanSeeAllAvailableGroupsInTheDropdownMenu() {
+    @Then("the user can see all available groups")
+    public void theUserCanSeeAllAvailableGroups() {
+
+        List<String>expectedGroups = new ArrayList<>();
+        expectedGroups.addAll(Arrays.asList("Kamran'sGroup","whatevero"));
+        List<String>ActualGroups = new ArrayList<>();
+        ActualGroups.addAll(Arrays.asList(contactsPage.ExpectedGroup1.getText(),contactsPage.ExpectedGroup2.getText()));
+        Assert.assertTrue(expectedGroups.containsAll(ActualGroups));
+
     }
 
     @When("the user opens a contact's info page")
     public void theUserOpensAContactSInfoPage() {
     }
 
-    @And("the user selects {string} from the dropdown menu")
-    public void theUserSelectsFromTheDropdownMenu(String arg0) {
+    @And("the user selects Choose property type")
+    public void theUserSelectsFromTheDropdownMenu() {
+
+        contactsPage.ChooseTypeBox.click();
     }
 
-    @And("adds {string} as a new property")
-    public void addsAsANewProperty(String arg0) {
+    @And("adds Anniversary as a new property")
+    public void addsAsANewProperty() {
+        contactsPage.AnniversaryOption.click();
     }
 
-    @Then("the {string} property is added to the contact's info page")
-    public void thePropertyIsAddedToTheContactSInfoPage(String arg0) {
+    @Then("the Anniversary property is added to the contact's info page")
+    public void thePropertyIsAddedToTheContactSInfoPage() {
+        BrowserUtils.waitForVisibility(contactsPage.AnniversarySetupTitle,3);
+
+        Assert.assertTrue(contactsPage.AnniversarySetupTitle.isDisplayed());
     }
 
 
