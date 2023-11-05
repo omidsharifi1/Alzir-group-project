@@ -2,19 +2,16 @@ package com.meetsky.step_definitions;
 
 import com.github.javafaker.Faker;
 import com.meetsky.pages.ProfileSettingPage;
-import com.meetsky.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileSettingStepDefs {
+public class B30G4_148_ProfileSettingStepDefs {
 
     ProfileSettingPage settingPage = new ProfileSettingPage();
 
