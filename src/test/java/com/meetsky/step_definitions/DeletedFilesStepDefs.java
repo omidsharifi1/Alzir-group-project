@@ -47,45 +47,44 @@ loginPage.clickMenuByText("Files");
 
 
 
-//        System.out.println(timeStampAsNumbers1);
+/*
 
+       =========================================================================================================
 
-//        String  currentDateValue  = deletedFilesPage.FirstdateElements.getAttribute("data-timestamp");
-////        String previousDateValue= deletedFilesPage.NdateElement.getAttribute("data-timestamp");
-//
-//        System.out.println(currentDateValue);
-//        =========================================================================================================
+       long previousTimestamp = Long.parseLong(previousDateValue);
+       long currentTimestamp = Long.parseLong(currentDateValue);
 
-//        long previousTimestamp = Long.parseLong(previousDateValue);
-//        long currentTimestamp = Long.parseLong(currentDateValue);
-//
-//// Assert that the current timestamp is greater than the previous timestamp
-//        Assert.assertTrue("Current timestamp should be greater than previous timestamp",
-//                currentTimestamp > previousTimestamp);
+Assert that the current timestamp is greater than the previous timestamp
+       Assert.assertTrue("Current timestamp should be greater than previous timestamp",
+               currentTimestamp > previousTimestamp);
 
 
 
 
-//
-//        List<WebElement> mmm = (List<WebElement>) deletedFilesPage.FirstdateElements;
-//
-//        List<Date> dates = new ArrayList<>();
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM d, yyyy h:mm a");
-//
-//        for (WebElement dateElement : mmm) {
-//            String dateString = dateElement.getAttribute("data-original-title");
-//            try {
-//                Date date = dateFormat.parse(dateString);
-//                dates.add(date);
-//            } catch (ParseException e) {
-//                System.err.println("Error parsing date: " + dateString);
-//            }
-//        }
-//
-//        // Verify order
-//        for (int i = 1; i < dates.size(); i++) {
-//            Assert.assertTrue(dates.get(i).compareTo(dates.get(i - 1)) >= 0);
-//        }
+
+       List<WebElement> mmm = (List<WebElement>) deletedFilesPage.FirstdateElements;
+
+       List<Date> dates = new ArrayList<>();
+       SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM d, yyyy h:mm a");
+
+       for (WebElement dateElement : mmm) {
+           String dateString = dateElement.getAttribute("data-original-title");
+           try {
+               Date date = dateFormat.parse(dateString);
+               dates.add(date);
+           } catch (ParseException e) {
+               System.err.println("Error parsing date: " + dateString);
+           }
+       }
+
+       // Verify order
+       for (int i = 1; i < dates.size(); i++) {
+           Assert.assertTrue(dates.get(i).compareTo(dates.get(i - 1)) >= 0);
+       }
+       +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        */
+   
+    
     }
 
 
@@ -185,8 +184,7 @@ loginPage.clickMenuByText("Files");
         deletedFilesPage.deletePermantly.click();
         BrowserUtils.sleep(3);
 
-//       Assert.assertTrue(FilesNames.contains(firstFile));
-//        BrowserUtils.sleep(3);
+
     }
 
 
