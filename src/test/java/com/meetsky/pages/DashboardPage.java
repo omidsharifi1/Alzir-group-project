@@ -58,6 +58,18 @@ public class DashboardPage extends LoginPage{
     @FindBy(xpath = "//button[@href = '#']/span")
     public WebElement homeStatus;
 
+    @FindBy(className = "header-menu__trigger")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//input[@type=\"search\"]")
+    public WebElement searchBox;
+
+    @FindBy(xpath = "//a[@attributes=\"[object Object]\"]")
+    public WebElement foundFileBtn;
+
+    @FindBy(xpath = "//div[@class=\"logo logo-icon\"]")
+    public WebElement meetSkylogoBtn;
+
     public  void checkIfClickable(WebElement element){
         boolean isClickable = element.isEnabled();
 

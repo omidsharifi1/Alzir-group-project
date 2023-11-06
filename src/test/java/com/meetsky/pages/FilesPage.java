@@ -51,6 +51,9 @@ public class FilesPage {
     @FindBy(xpath = "//span[@class='fileinfo']")
     public WebElement fileSummary;
 
+    @FindBy (className = "app-sidebar")
+    public WebElement sidebar;
+
 
     //when user click on + icon to create new file, there is options pop up, below is the List of those option elements
     @FindBy(xpath = "//div[@class='newFileMenu popovermenu bubble menu open menu-left']//li//span[2]")
