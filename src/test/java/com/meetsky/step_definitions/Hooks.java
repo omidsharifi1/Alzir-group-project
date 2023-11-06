@@ -1,7 +1,5 @@
 package com.meetsky.step_definitions;
 
-
-
 import com.meetsky.utilities.BrowserUtils;
 import com.meetsky.utilities.ConfigurationReader;
 import com.meetsky.utilities.Driver;

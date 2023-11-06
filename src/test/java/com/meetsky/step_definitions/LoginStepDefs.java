@@ -20,6 +20,6 @@ public class LoginStepDefs {
     @Given("the user logged in with username and password")
     public void theUserLoggedInWithUsernameAndPassword() {
 
-        loginPage.login(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
+      loginPage.login(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
     }
 }
